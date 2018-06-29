@@ -8,6 +8,7 @@ npm install generate-colors --save
 import { getColorForString } from "generate-colors"
 
 const color = getColorForString('First Name and Last Name')
+// color = [90, 39, 50]
 ```
 
 ## Contribution

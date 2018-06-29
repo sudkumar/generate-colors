@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/sudkumar/generate-colors/issues"
   },
-  "license": "MIT",
+  "license": "WTFPL",
   "author": "Sudhir Mitharwal <luckysud4@gmail.com>",
   "files": [
     "bin",
@@ -23,7 +23,7 @@
   ],
   "main": "dist/index.js",
   "bin": {
-    "tiny-command": "bin/command.js"
+    "colors": "bin/colors.js"
   },
   "repository": {
     "type": "git",
@@ -33,9 +33,10 @@
     "lint": "npm run lint:lib && npm run lint:cli",
     "lint:cli": "eslint cli",
     "lint:lib": "eslint lib",
+    "docs": "NODE_ENV=produciton webpack --config webpack.config.js",
     "test": "mocha --compilers js:babel-register",
     "coverage": "nyc --reporter=lcov --reporter=text npm test",
-    "build": "npm run build:lib && npm run build:cli",
+    "build": "npm run build:lib && npm run build:cli && npm run docs",
     "build:cli": "babel --presets latest -d bin/ cli/",
     "build:lib": "babel --presets latest -d dist/ lib/",
     "build:runtime": "babel --presets latest --plugins transform-runtime -d dist/ lib/",
@@ -53,12 +54,17 @@
     "core-js": "^2.4.1",
     "eslint": "^4.1.0",
     "faker": "^4.1.0",
+    "html-webpack-plugin": "^4.0.0-alpha",
     "mocha": "^5.2.0",
-    "nyc": "^11.0.0"
+    "nyc": "^11.0.0",
+    "prompt": "^1.0.0",
+    "webpack": "^4.13.0",
+    "webpack-cli": "^3.0.8"
   },
   "homepage": "https://github.com/sudkumar/generate-colors#readme",
   "directories": {
     "lib": "lib",
     "test": "test"
-  }
+  },
+  "dependencies": {}
 }
