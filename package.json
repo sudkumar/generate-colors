@@ -1,0 +1,64 @@
+{
+  "name": "generate-colors",
+  "version": "1.0.0",
+  "description": "Get colors for a string with accessibility compliant",
+  "keywords": [
+    "es2015",
+    "es5",
+    "es6",
+    "node",
+    "npm",
+    "package",
+    "generate colors"
+  ],
+  "bugs": {
+    "url": "https://github.com/sudkumar/generate-colors/issues"
+  },
+  "license": "MIT",
+  "author": "Sudhir Mitharwal <luckysud4@gmail.com>",
+  "files": [
+    "bin",
+    "dist",
+    "lib"
+  ],
+  "main": "dist/index.js",
+  "bin": {
+    "tiny-command": "bin/command.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudkumar/generate-colors.git"
+  },
+  "scripts": {
+    "lint": "npm run lint:lib && npm run lint:cli",
+    "lint:cli": "eslint cli",
+    "lint:lib": "eslint lib",
+    "test": "mocha --compilers js:babel-register",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test",
+    "build": "npm run build:lib && npm run build:cli",
+    "build:cli": "babel --presets latest -d bin/ cli/",
+    "build:lib": "babel --presets latest -d dist/ lib/",
+    "build:runtime": "babel --presets latest --plugins transform-runtime -d dist/ lib/",
+    "prepublish": "npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-latest-minimal": "^1.1.2",
+    "babel-register": "^6.16.3",
+    "babel-runtime": "^6.11.6",
+    "chai": "^4.0.0",
+    "core-js": "^2.4.1",
+    "eslint": "^4.1.0",
+    "faker": "^4.1.0",
+    "mocha": "^3.1.2",
+    "nyc": "^11.0.0"
+  },
+  "homepage": "https://github.com/sudkumar/generate-colors#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
+}
