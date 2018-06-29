@@ -39,7 +39,7 @@
     "build:cli": "babel --presets latest -d bin/ cli/",
     "build:lib": "babel --presets latest -d dist/ lib/",
     "build:runtime": "babel --presets latest --plugins transform-runtime -d dist/ lib/",
-    "prepublish": "npm run lint && npm test && npm run build"
+    "prepare": "npm run lint && npm test && npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -53,7 +53,7 @@
     "core-js": "^2.4.1",
     "eslint": "^4.1.0",
     "faker": "^4.1.0",
-    "mocha": "^3.1.2",
+    "mocha": "^5.2.0",
     "nyc": "^11.0.0"
   },
   "homepage": "https://github.com/sudkumar/generate-colors#readme",
