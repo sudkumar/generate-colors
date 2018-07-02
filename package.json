@@ -23,7 +23,7 @@
   ],
   "main": "dist/index.js",
   "bin": {
-    "colors": "bin/colors.js"
+    "generate-colors": "bin/colors.js"
   },
   "repository": {
     "type": "git",
