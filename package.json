@@ -36,7 +36,7 @@
     "docs": "NODE_ENV=produciton webpack --config webpack.config.js",
     "test": "mocha --compilers js:babel-register",
     "coverage": "nyc --reporter=lcov --reporter=text npm test",
-    "build": "npm run build:lib && npm run build:cli && npm run docs",
+    "build": "npm run build:lib && npm run build:cli",
     "build:cli": "babel --presets latest -d bin/ cli/",
     "build:lib": "babel --presets latest -d dist/ lib/",
     "build:runtime": "babel --presets latest --plugins transform-runtime -d dist/ lib/",
@@ -60,6 +60,7 @@
     "np": "^3.0.4",
     "nyc": "^11.0.0",
     "prompt": "^1.0.0",
+    "terser-webpack-plugin": "^1.1.0",
     "webpack": "^4.13.0",
     "webpack-cli": "^3.0.8"
   },
