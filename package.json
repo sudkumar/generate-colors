@@ -40,7 +40,8 @@
     "build:cli": "babel --presets latest -d bin/ cli/",
     "build:lib": "babel --presets latest -d dist/ lib/",
     "build:runtime": "babel --presets latest --plugins transform-runtime -d dist/ lib/",
-    "prepare": "npm run lint && npm test && npm run build"
+    "prepare": "npm run lint && npm test && npm run build",
+    "release": "np"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -56,6 +57,7 @@
     "faker": "^4.1.0",
     "html-webpack-plugin": "^4.0.0-alpha",
     "mocha": "^5.2.0",
+    "np": "^3.0.4",
     "nyc": "^11.0.0",
     "prompt": "^1.0.0",
     "webpack": "^4.13.0",
