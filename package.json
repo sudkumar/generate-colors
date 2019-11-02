@@ -3,12 +3,6 @@
   "version": "1.2.0",
   "description": "Get colors for a string with accessibility compliant",
   "keywords": [
-    "es2015",
-    "es5",
-    "es6",
-    "node",
-    "npm",
-    "package",
     "generate colors"
   ],
   "bugs": {
@@ -19,7 +13,8 @@
   "files": [
     "bin",
     "dist",
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "main": "dist/index.js",
   "bin": {
