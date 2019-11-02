@@ -1,3 +1,8 @@
 declare module "generate-colors" {
-  export function getColorForString(str: string): [number, number, number];
+  export function getColorForString(
+    str: string,
+    options?: {
+      contrast: number;
+    }
+  ): [number, number, number];
 }
