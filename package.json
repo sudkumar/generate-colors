@@ -46,18 +46,18 @@
     "babel-preset-latest-minimal": "^1.1.2",
     "babel-register": "^6.16.3",
     "babel-runtime": "^6.11.6",
-    "chai": "^4.0.0",
+    "chai": "^4.2.0",
     "core-js": "^2.4.1",
-    "eslint": "^4.1.0",
+    "eslint": "^6.6.0",
     "faker": "^4.1.0",
     "html-webpack-plugin": "^4.0.0-alpha",
     "mocha": "^5.2.0",
     "np": "^3.0.4",
-    "nyc": "^11.0.0",
+    "nyc": "^14.1.1",
     "prompt": "^1.0.0",
     "terser-webpack-plugin": "^1.1.0",
-    "webpack": "^4.13.0",
-    "webpack-cli": "^3.0.8"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "homepage": "https://github.com/sudkumar/generate-colors#readme",
   "directories": {
