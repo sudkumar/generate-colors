@@ -26,11 +26,24 @@ const color = getColorForString("First Name and Last Name");
 
 > Passing the same string again will result in the same color.
 
+### Available Method
+
+```js
+/**
+ * Generate the color a string
+ * @param {string} str String for which we want to get the colors
+ * @param {{ contrast: number }} [config={ contrast: 30 }] - Configuration for the color
+ * @returns {Array} Array with R,G,B values in sequence
+ */
+function getColorForString(str, config): [number, number, number]
+```
+
+### CLI
+
 This module also exposes a CLI tool to generate colors from command line itself.
 
 ```bash
-generate-colors
-> Input String: "unieue@example.com"
+npx generate-colors "unique@example.com" --contrast=35
 ```
 
 ## Contribution
@@ -40,7 +53,7 @@ Any kind of contribution is most welcome!!
 ### Setup
 
 1. Fork the repository to your account.
-2. Clone the repo and install dependencies.
+2. Clone the repository and install dependencies.
 
 ```bash
 git clone git@github.com:<your_username>/generate-colors
