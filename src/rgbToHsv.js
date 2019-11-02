@@ -1,4 +1,4 @@
-const getHueFromRgb = require('./getHueFromRgb')
+import getHueFromRgb from "./getHueFromRgb"
 /**
  * Convert rgb to HSV
  * @param {Integer} r - red value [0- 255]
@@ -6,7 +6,7 @@ const getHueFromRgb = require('./getHueFromRgb')
  * @param {Integer} b - red value [0- 255]
  * @return {Array} hsv - [h, s, v]
  */
-function rgbToHsv (r, g, b) {
+function rgbToHsv(r, g, b) {
   r = r / 255
   g = g / 255
   b = b / 255
@@ -15,11 +15,11 @@ function rgbToHsv (r, g, b) {
   const c = M - m
   let sat = 0
   if (M !== 0) {
-    sat = c / M * 100
+    sat = (c / M) * 100
   }
   const hue = getHueFromRgb(r, g, b)
   const v = Math.max(r, g, b) * 100
   return [hue, Math.round(sat), Math.round(v)]
 }
 
-module.exports = rgbToHsv
+export default rgbToHsv

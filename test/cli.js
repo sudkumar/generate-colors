@@ -2,7 +2,7 @@ const { expect } = require("chai")
 const faker = require("faker")
 const exec = require("child_process").exec
 
-const cli_path = require.resolve("./../cli/generate-colors")
+const cli_path = require.resolve("./../bin/generate-colors")
 
 function runCli(args = "") {
   return new Promise((resolve, reject) => {

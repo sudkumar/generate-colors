@@ -1,17 +1,18 @@
 /**
-* Converts HSL to RGB value.
-*
-* @param {Integer} h Hue as a value between 0 - 360 degrees
-* @param {Integer} s Saturation as a value between 0 - 100%
-* @param {Integer} l Lightness as a value between 0 - 100%
-* @returns {Array} The RGB values  EG: [r,g,b], [255,255,255]
-*/
-function hslToRgb (h, s, l) {
-  l = l / 100
+ * Converts HSV to RGB value.
+ *
+ * @param {Integer} h Hue as a value between 0 - 360 degrees
+ * @param {Integer} s Saturation as a value between 0 - 100%
+ * @param {Integer} v Value as a value between 0 - 100%
+ * @returns {Array} The RGB values  EG: [r,g,b], [255,255,255]
+ */
+
+function hsvToRgb(h, s, v) {
+  v = v / 100
   s = s / 100
-  const c = (1 - Math.abs(2 * l - 1)) * s
+  const c = v * s
   const hx = h / 60
-  const x = c * (1 - Math.abs(hx % 2 - 1))
+  const x = c * (1 - Math.abs((hx % 2) - 1))
   let rgb = [0, 0, 0]
   if (!h) {
     rgb = [0, 0, 0]
@@ -28,8 +29,8 @@ function hslToRgb (h, s, l) {
   } else {
     rgb = [c, 0, x]
   }
-  const m = l - c / 2
+  const m = v - c
   return rgb.map(c => Math.round((c + m) * 256))
 }
 
-module.exports = hslToRgb
+export default hsvToRgb
