@@ -2,6 +2,9 @@ import pkg from "./package.json"
 import resolve from "rollup-plugin-node-resolve"
 import commonjs from "rollup-plugin-commonjs"
 import { terser } from "rollup-plugin-terser"
+import svelte from "rollup-plugin-svelte"
+import html from "rollup-plugin-fill-html"
+import cleaner from "rollup-plugin-cleaner"
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -36,16 +39,24 @@ export default [
   },
   // docs
   {
-    input: "docs/app.js",
+    input: "docs/main.js",
     output: {
-      file: "docs/bundle.js",
+      file: ".out/main.js",
       format: "iife", // immediately-invoked function expression — suitable for <script> tags
       sourcemap: true,
     },
     plugins: [
+      cleaner({
+        targets: [".out"],
+      }),
       resolve(), // tells Rollup how to find date-fns in node_modules
       commonjs(), // converts date-fns to ES modules
+      svelte({}), // handle svelte
       production && terser(), // minify, but only in production
+      html({
+        template: "docs/index.html",
+        filename: "index.html",
+      }),
     ],
   },
 ]

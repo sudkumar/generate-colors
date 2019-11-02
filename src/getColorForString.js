@@ -14,10 +14,10 @@ function getColorForString(str = "", options = {}) {
   options = Object.assign({}, defaultOptions, options)
   const cacheKey = str + JSON.stringify(options)
   if (colorForString[cacheKey]) {
-    return colorForString[cacheKey]
+    return colorForString[cacheKey] || [0, 0, 0]
   }
   if (!str) {
-    return colorForString[cacheKey]
+    return colorForString[cacheKey] || [0, 0, 0]
   }
   const letters = str.split("")
   // get the hash
