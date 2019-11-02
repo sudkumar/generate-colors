@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/sudkumar/generate-colors/issues"
   },
-  "license": "WTFPL",
+  "license": "MIT",
   "author": "Sudhir Mitharwal <luckysud4@gmail.com>",
   "files": [
     "bin",
