@@ -34,7 +34,7 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "docs": "serve .out",
-    "dev": "npm-run-all --parallel docs watch",
+    "dev": "npm-run-all -p -l docs watch",
     "prepare": "npm run lint && npm test",
     "release": "np",
     "postrelease": "gh-pages -d .out"

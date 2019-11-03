@@ -38,6 +38,8 @@ const color = getColorForString("First Name and Last Name")
 function getColorForString(str, config): [number, number, number]
 ```
 
+Visit [Playground](https://sudkumar.github.io/generate-colors/) to see in section.
+
 ### CLI
 
 This module also exposes a CLI tool to generate colors from command line itself.
