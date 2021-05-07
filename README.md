@@ -83,7 +83,7 @@ Visit [Playground](https://sudkumar.github.io/generate-colors/) to see in sectio
 This module also exposes a CLI tool to generate colors from command line itself.
 
 ```bash
-npx generate-colors "unique@example.com" --contrast=35
+npx generate-colors "unique@example.com" --brightness=35 --saturation=70
 ```
 
 ## Contribution
