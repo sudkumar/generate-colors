@@ -1,10 +1,10 @@
 import getHueFromRgb from "./getHueFromRgb"
 /**
  * Convert rgb to HSV
- * @param {Integer} r - red value [0- 255]
- * @param {Integer} g - red value [0- 255]
- * @param {Integer} b - red value [0- 255]
- * @return {Array} hsv - [h, s, v]
+ * @param {number} r - red value [0- 255]
+ * @param {number} g - red value [0- 255]
+ * @param {number} b - red value [0- 255]
+ * @return {[hue: number, saturation: number, value: number]} hsv - [h, s, v]
  */
 function rgbToHsv(r, g, b) {
   r = r / 255

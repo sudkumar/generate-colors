@@ -32,10 +32,48 @@ const color = getColorForString("First Name and Last Name")
 /**
  * Generate the color a string
  * @param {string} str String for which we want to get the colors
- * @param {{ contrast: number }} [config={ contrast: 30 }] - Configuration for the color
- * @returns {Array} Array with R,G,B values in sequence
+ * @param {{ brightness?: number | ((defaultBrightness: number) => number), saturation?: number | ((defaultSaturation: number) => number) }} [config={ contrast: 30, saturation: undefined }] - Configuration for the color
+ * @returns {Array<number>} Array with R,G,B values in sequence
  */
 function getColorForString(str, config): [number, number, number]
+```
+
+When you pass custom values for configuration (brightness/saturation), you will be responsible for accessibility. You
+will receive the default values for each option when passing a function to these configuration values.
+
+Here are some examples to set the configuration values using the default values.
+
+```js
+getColorForString("string", {
+  brightness: (defaultBrightness) => {
+    // let's keep the brightness between 20 to 60
+    if (defaultBrightness <= 20) return 20
+    if (defaultBrightness >= 60) return 60
+    return defaultBrightness
+  },
+  saturation: (defaultSaturation) => {
+    // let's keep the saturation between 50 to 90
+    if (defaultSaturation <= 50) return 50
+    if (defaultSaturation >= 90) return 90
+    return defaultSaturation
+  },
+})
+```
+
+#### Color Caching
+
+If you are generating thousands of colors, calls to `getColorForString` may slow down your processing. If you have fixed
+numbers of strings, you should use caching.
+
+```js
+import { makeGetColorForOptions } from "generate-colors"
+
+// now you can use this
+const getColorForString = makeGetColorForOptions({ brightness: 50 })
+
+// Now this function cache generated colors for each string
+// NOTE: It will NOT accept configuration options
+generateColors("string")
 ```
 
 Visit [Playground](https://sudkumar.github.io/generate-colors/) to see in section.

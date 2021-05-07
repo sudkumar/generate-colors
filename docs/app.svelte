@@ -2,8 +2,9 @@
   import { getColorForString } from "./../src"
 
   $: value = ""
-  $: contrast = 35
-  $: color = `rgb(${getColorForString(value, { contrast: contrast }).join(',')})`
+  $: brightness = 35
+  $: saturation = undefined
+  $: color = `rgb(${getColorForString(value, { brightness: brightness, saturation: saturation }).join(',')})`
 </script>
 <style>
   .text-center {text-align: center;}
@@ -39,16 +40,34 @@
           placeholder="Type here to see the background change..."
         />
       </div>
-      <div>
-        <label for="contrast">Contrast</label>
+      <div class="pr-4">
+        <div>
+          <label for="brightness">Brightness</label> <a href="https://en.wikipedia.org/wiki/Brightness" target="_blank"
+          rel="no-openner no-referrer">?</a>
+        </div>
         <input
-          id="contrast"
+          id="brightness"
           min={0}
           max={100}
           type="number"
           class="block p-4 text-lg outline-none border rounded-lg"
-          bind:value={contrast}
-          placeholder="Contrast with with"
+          bind:value={brightness}
+          placeholder="Brightness/Value of color (HSV)"
+          />
+      </div>
+      <div>
+        <div>
+          <label for="saturation">Saturation</label> <a href="https://en.wikipedia.org/wiki/Colorfulness" target="_blank"
+          rel="no-openner no-referrer">?</a>
+        </div>
+        <input
+          id="saturation"
+          min={0}
+          max={100}
+          type="number"
+          class="block p-4 text-lg outline-none border rounded-lg"
+          bind:value={saturation}
+          placeholder="Saturation or Colorfulness"
           />
       </div>
     </div>

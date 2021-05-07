@@ -1,10 +1,10 @@
 /**
  * Converts HSV to RGB value.
  *
- * @param {Integer} h Hue as a value between 0 - 360 degrees
- * @param {Integer} s Saturation as a value between 0 - 100%
- * @param {Integer} v Value as a value between 0 - 100%
- * @returns {Array} The RGB values  EG: [r,g,b], [255,255,255]
+ * @param {number} h Hue as a value between 0 - 360 degrees
+ * @param {number} s Saturation as a value between 0 - 100%
+ * @param {number} v Value as a value between 0 - 100%
+ * @returns {[red: number, green: number, blue: number]} The RGB values  EG: [r,g,b], [255,255,255]
  */
 
 function hsvToRgb(h, s, v) {
@@ -30,7 +30,7 @@ function hsvToRgb(h, s, v) {
     rgb = [c, 0, x]
   }
   const m = v - c
-  return rgb.map(c => Math.round((c + m) * 256))
+  return rgb.map((c) => Math.round((c + m) * 256))
 }
 
 export default hsvToRgb

@@ -65,7 +65,9 @@
     "lib": "lib",
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@rollup/plugin-html": "^0.2.3"
+  },
   "eslintConfig": {
     "parserOptions": {
       "sourceType": "module",

@@ -1,3 +1,3 @@
-import getColorForString from "./getColorForString"
+import getColorForString, { makeGetColorForOptions } from "./getColorForString"
 
-export { getColorForString }
+export { getColorForString, makeGetColorForOptions }
