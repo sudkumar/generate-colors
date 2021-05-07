@@ -1,6 +1,6 @@
 {
   "name": "generate-colors",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Get colors for a string with accessibility compliant",
   "keywords": [
     "generate colors"
