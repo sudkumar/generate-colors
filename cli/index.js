@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import getColorForString from "../src/getColorForString"
 
 const [, , ...args] = process.argv

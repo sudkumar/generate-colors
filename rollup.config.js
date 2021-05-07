@@ -5,6 +5,7 @@ import { terser } from "rollup-plugin-terser"
 import svelte from "rollup-plugin-svelte"
 import html from "@rollup/plugin-html"
 import cleaner from "rollup-plugin-cleaner"
+import { preserveShebangs } from "rollup-plugin-preserve-shebangs"
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -36,6 +37,7 @@ export default [
       file: pkg.bin["generate-colors"],
       format: "cjs",
     },
+    plugins: [preserveShebangs()],
   },
   // docs
   {
