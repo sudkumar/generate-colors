@@ -4,18 +4,18 @@ declare module "generate-colors" {
      * Brightness/value of hue
      * https://en.wikipedia.org/wiki/Brightness
      */
-    brightness: number | ((defaultBrightness: number) => number)
+    brightness?: number | ((defaultBrightness: number) => number)
     /**
      * Saturation
      * https://en.wikipedia.org/wiki/Colorfulness
      */
-    saturation: number | ((defaultSaturation: number) => number)
+    saturation?: number | ((defaultSaturation: number) => number)
     /**
      * This is the value of brightness of hue
      * https://en.wikipedia.org/wiki/Brightness
      * @deprecated Please use brightness
      */
-    contrast: number
+    contrast?: number
   }
   /**
    * Get a color [r,g,b] for a given string
@@ -34,5 +34,5 @@ declare module "generate-colors" {
      * Options applied to each further invocations
      */
     options?: GenerateColorOptions
-  ): (str: string) => [red: number, green: number, blue: green]
+  ): (str: string) => [red: number, green: number, blue: number]
 }
